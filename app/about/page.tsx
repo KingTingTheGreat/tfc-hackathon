@@ -32,7 +32,7 @@ const team: TeamMember[] = [
 
 const MemberCard = ({ member }: { member: TeamMember }) => {
 	return (
-		<div className="bg-green-200 p-2 m-2 flex-1 rounded-lg max-w-40">
+		<div className="bg-blue-200 p-2 m-2 flex-1 rounded-lg max-w-40">
 			<h3>Name: {member.name}</h3>
 			<p>{member.role}</p>
 			<p>{member.description}</p>
