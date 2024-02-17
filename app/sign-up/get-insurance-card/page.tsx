@@ -18,10 +18,10 @@ const InputField = ({ label, value, setValue, required }: { label: string, value
 	);
 };
 
-export default function SignUp4() {
-	const [state, setSateName] = useState("");
-	const [zipCode, setZipCode] = useState("");
-	const [country, setCountry] = useState("");
+export default function SignUp5() {
+	const [group, setGroup] = useState("");
+	const [id, setID] = useState("");
+	const [rxBIN, setRXBin] = useState("");
 
 
 	return (
@@ -32,11 +32,11 @@ export default function SignUp4() {
 					medical documents.
 				</p>
 				<p className="text-sm">* marks a required field</p>
-				<InputField label='State *' value={state} setValue={setSateName} required={true} />
-				<InputField label='Zip Code *' value={zipCode} setValue={setZipCode} required={true} />
-				<InputField label='Country *' value={country} setValue={setCountry} required={true} />
+				<InputField label='Group Number *' value={group} setValue={setGroup} required={true} />
+				<InputField label='Member ID *' value={id} setValue={setID} required={true} />
+				<InputField label='RxBIN *' value={rxBIN} setValue={setRXBin} required={true} />
 				<div>
-					<Link className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/get-insurance-card'>
+					<Link className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/email-and-password'>
 						Continue
 					</Link>
 				</div>

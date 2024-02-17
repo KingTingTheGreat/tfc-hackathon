@@ -33,8 +33,8 @@ export default function SignUp3() {
 				</p>
 				<p className="text-sm">* marks a required field</p>
 				<InputField label='Address *' value={address} setValue={setAddress} required={true} />
-				<InputField label='Apartment, suite, etc' value={appt} setValue={setAppt} required={true} />
-				<InputField label='City *' value={city} setValue={setCity} required={false} />
+				<InputField label='Apartment, suite, etc' value={appt} setValue={setAppt} required={false} />
+				<InputField label='City *' value={city} setValue={setCity} required={true} />
 				<div>
 					<Link className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/address-two'>
 						Continue
