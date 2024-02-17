@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { userDBConnect } from "@/utils/connection";
-import bcrypt from "bcrypt";
+const bcrypt = require("bcrypt");
 
 export const dynamic = "force-dynamic"; // defaults to auto
 
