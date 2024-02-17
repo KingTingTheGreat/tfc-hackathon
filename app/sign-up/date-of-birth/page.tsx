@@ -8,7 +8,7 @@ const InputField = ({ label, value, setValue, required }: { label: string, value
             <h4>{label}</h4>
             <input
                 type="text"
-                className="m-2 text-black"
+                className="m-2 text-black rounded"
                 value={value}
                 placeholder={label}
                 required={required}
@@ -80,7 +80,7 @@ export default function SignUp2() {
                     {years.map((year) => <option key={year.toString()} value={year.toString()}>{year.toString()}</option>)}
                 </select>
                 <div>
-                    <Link className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/address-one'>
+                    <Link className="text-blaj bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/address-one'>
                         Continue
                     </Link>
                 </div>

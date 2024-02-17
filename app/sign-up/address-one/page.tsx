@@ -8,7 +8,7 @@ const InputField = ({ label, value, setValue, required }: { label: string, value
 			<h4>{label}</h4>
 			<input
 				type="text"
-				className="m-2 text-black"
+				className="m-2 text-black rounded"
 				value={value}
 				placeholder={label}
 				required={required}
@@ -36,7 +36,7 @@ export default function SignUp3() {
 				<InputField label='Apartment, suite, etc' value={appt} setValue={setAppt} required={false} />
 				<InputField label='City *' value={city} setValue={setCity} required={true} />
 				<div>
-					<Link className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/address-two'>
+					<Link className="text-blaj bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/address-two'>
 						Continue
 					</Link>
 				</div>

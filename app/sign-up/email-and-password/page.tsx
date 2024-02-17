@@ -8,7 +8,7 @@ const InputField = ({ label, value, setValue, required }: { label: string, value
 			<h4>{label}</h4>
 			<input
 				type="text"
-				className="m-2 text-black"
+				className="m-2 text-black rounded"
 				value={value}
 				placeholder={label}
 				required={required}
@@ -36,7 +36,7 @@ export default function SignUp6() {
 				<InputField label='Password *' value={password} setValue={setPassword} required={true} />
 				<InputField label='Retype Password *' value={retypePassword} setValue={setRetypePassword} required={true} />
 				<div>
-					<Link className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/'>
+					<Link className="text-blaj bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/'>
 						Continue
 					</Link>
 				</div>
