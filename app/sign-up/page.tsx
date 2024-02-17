@@ -17,7 +17,6 @@ const InputField = ({
 		<div className="flex items-center text-offwhite">
 			<h4>{label}</h4>
 			<input
-			
 				type="text"
 				className="m-2 text-black rounded"
 				value={value}
@@ -33,7 +32,6 @@ export default function SignUp1() {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [middleName, setMiddleName] = useState("");
-	const [startDate, setStartDate] = useState(new Date());
 
 	return (
 		<main className="flex min-h-11/12 items-center justify-center">
@@ -56,7 +54,9 @@ export default function SignUp1() {
 					</Link>
 				</div>
 				<div>
-					<Link className="text-offwhite my-5" href="/">← Back</Link>
+					<Link className="text-offwhite my-5" href="/sign-up">
+						← Back
+					</Link>
 				</div>
 			</div>
 		</main>
