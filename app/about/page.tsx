@@ -44,7 +44,7 @@ export default function About() {
 	return (
 		<main className="flex min-h-screen items-center  p-24">
 			{team.map((member) => (
-				<MemberCard member={member} />
+				<MemberCard key={member.name} member={member} />
 			))}
 		</main>
 	);
