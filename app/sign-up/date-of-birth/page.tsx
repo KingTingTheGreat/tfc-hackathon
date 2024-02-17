@@ -71,13 +71,13 @@ export default function SignUp2() {
                 <p className="text-sm">* marks a required field</p>
                 <label>Date of Birth:</label>
                 <select name="day" id="day" value={selectedDay} onChange={handleDayChange}>
-                    {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => <option value={day}>{day}</option>)}
+                    {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => <option key={day} value={day}>{day}</option>)}
                 </select>
                 <select name="month" id="month" value={selectedMonth} onChange={handleMonthChange}>
-                    {months.map((month) => <option value={month}>{month}</option>)}
+                    {months.map((month) => <option key={month} value={month}>{month}</option>)}
                 </select>
                 <select name="year" id="year" value={selectedYear} onChange={handleYearChange}>
-                    {years.map((year) => <option value={year.toString()}>{year.toString()}</option>)}
+                    {years.map((year) => <option key={year.toString()} value={year.toString()}>{year.toString()}</option>)}
                 </select>
                 <div>
                     <Link className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full" href='/sign-up/address-one'>
