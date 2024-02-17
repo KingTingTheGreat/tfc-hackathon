@@ -10,7 +10,7 @@ const NavLink = ({ path, name }: { path: string; name: string }) => {
 
 const Header = () => {
 	return (
-		<header className="flex justify-between w-full min-h-1/12 p-4 bg-gray-200">
+		<header className="hidden md:flex justify-between w-full min-h-1/12 p-4 bg-gray-200">
 			<div>TFC HACKATHON</div>
 			<div>
 				<NavLink path="/" name="Home" />
