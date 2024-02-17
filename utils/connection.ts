@@ -6,7 +6,7 @@ const DB_NAME = process.env.DB_NAME;
 const DB_COLLECTION = process.env.DB_COLLECTION;
 
 // connection function
-export const entryDBConnect = async () => {
+export const userDBConnect = async () => {
 	const UserSchema = new mongoose.Schema({
 		email: String,
 		password: String,
