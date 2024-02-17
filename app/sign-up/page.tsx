@@ -14,11 +14,12 @@ const InputField = ({
 	required: boolean;
 }) => {
 	return (
-		<div className="flex items-center">
+		<div className="flex items-center text-offwhite">
 			<h4>{label}</h4>
 			<input
+			
 				type="text"
-				className="m-2 text-black"
+				className="m-2 text-black rounded"
 				value={value}
 				placeholder={label}
 				required={required}
@@ -36,24 +37,26 @@ export default function SignUp1() {
 
 	return (
 		<main className="flex min-h-11/12 items-center justify-center">
-			<div className="text-offwhite text-center w-[70%]">
-				<p className="text-2xl">
+			<div className="flex-flex-col min-h-11/12 items-center justify-center text-center w-[70%] py-10 my-5">
+				<p className="text-2xl text-offwhite ">
 					Let&apos;s start with some basic information about you. Enter this information as it would appear on
 					your medical documents.
 				</p>
-				<p className="text-sm">* marks a required field</p>
-				<InputField label="First Name *" value={firstName} setValue={setFirstName} required={true} />
-				<InputField label="Last Name *" value={lastName} setValue={setLastName} required={true} />
-				<InputField label="Middle Name" value={middleName} setValue={setMiddleName} required={false} />
-				<div>
+				<p className="text-sm py-5 text-offwhite">* marks a required field</p>
+				<div className="flex-flex-col min-h-1 items-end my-5">
+					<InputField label="First Name *" value={firstName} setValue={setFirstName} required={true} />
+					<InputField label="Last Name *" value={lastName} setValue={setLastName} required={true} />
+					<InputField label="Middle Name" value={middleName} setValue={setMiddleName} required={false} />
+				</div>
+				<div className="my-10">
 					<Link
-						className="text-blue bg-offwhite text-center py-2 px-4 my-2 rounded-full"
+						className="text-blaj bg-offwhite text-center py-2 px-4 my-5 rounded-full"
 						href="sign-up/date-of-birth">
 						Continue
 					</Link>
 				</div>
 				<div>
-					<Link href="/">← Back</Link>
+					<Link className="text-offwhite my-5" href="/">← Back</Link>
 				</div>
 			</div>
 		</main>
