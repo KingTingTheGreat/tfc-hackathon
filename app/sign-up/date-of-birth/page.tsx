@@ -65,7 +65,7 @@ export default function SignUp2() {
         <main className="flex min-h-11/12 items-center justify-center">
             <div className="text-offwhite text-center w-[70%]">
                 <p className="text-2xl">
-                    Let's start with some basic information about you. Enter this information as it would appear on your
+                    Let&apos;s start with some basic information about you. Enter this information as it would appear on your
                     medical documents.
                 </p>
                 <p className="text-sm">* marks a required field</p>
