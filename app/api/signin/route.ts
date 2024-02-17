@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { userDBConnect } from "@/utils/connection";
-// import bcrypt from "bcrypt";
 const bcrypt = require("bcrypt");
 
 export const dynamic = "force-dynamic"; // defaults to auto
@@ -8,17 +7,28 @@ export const dynamic = "force-dynamic"; // defaults to auto
 export async function POST(request: NextRequest) {
 	const { email, password } = await request.json();
 
-	const hashedPassword = await bcrypt.hash(password, 10);
+	if (!email || !password) {
+		return NextResponse.json({ error: "Email and password are required" }, { status: 400 });
+	}
 
 	const db = await userDBConnect();
-	const user = await db.User.find({ email, password: hashedPassword }).exec();
+	const user = await db.User.find({ email }).exec();
 
-	if (!user) {
-		return NextResponse.json({ status: 401 });
+	// check this user exists
+	if (user.length === 0) {
+		return NextResponse.json({ error: "Incorrect email" }, { status: 401 });
 	}
-	if (user.length != 1) {
-		return NextResponse.json({ status: 500 });
+	// ensure nothing wrong on our end
+	if (user.length > 1) {
+		return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 });
 	}
 
-	return NextResponse.json({ status: 200 });
+	// check if the password is correct
+	const match = await bcrypt.compare(password, user[0].password);
+	if (!match) {
+		return NextResponse.json({ error: "Incorrect password" }, { status: 401 });
+	}
+	// return user data
+	const { password: _, ...userData } = user[0];
+	return NextResponse.json(userData, { status: 200 });
 }
