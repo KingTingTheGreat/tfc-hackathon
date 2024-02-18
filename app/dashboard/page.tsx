@@ -46,15 +46,18 @@ export default function Dashboard() {
 	}
 
 	return (
-		<main className="w-full min-h-11/12 flex flex-col text-offwhite items-center justify-center">
-			<div className="bg-blue items-center justify-center">
+		<main className="w-full min-h-11/12 flex flex-col text-offwhite items-center justify-center bg-white">
+			<div className="bg-blue items-center justify-center bg-blaj w-full p-5 pt-[10rem]">
 				{/* <Link href="/">← Sign Out</Link> */}
 				<h3 className="text-3xl md:text-5xl">Welcome back, {userData.firstName}</h3>
 				<p className="text-xl md:text-2xl">
-					Your location is {userData.city}, {userData.state}
+					Your location is{" "}
+					<u>
+						{userData.city}, {userData.state}
+					</u>
 				</p>
 			</div>
-			<div className=" items-center justify-center">
+			<div className="pt-5 items-center justify-center">
 				<div className="flex flex-col items-start">
 					<p>New search</p>
 					<input
