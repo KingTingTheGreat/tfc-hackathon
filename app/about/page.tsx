@@ -58,7 +58,7 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
 
 export default function About() {
 	return (
-		<main className="flex min-h-screen w-[80%]">
+		<main className="flex min-h-11/12 w-[80%]">
 			<div className="flex flex-col items-center">
 				<p className="text-2xl text-center text-offwhite p-4 md:p-20">
 					We are a group of engineers and developers who are passionate about making healthcare data more
