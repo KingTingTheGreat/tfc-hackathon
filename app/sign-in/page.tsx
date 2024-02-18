@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import { redirect } from "next/navigation";
 import useSWR, { mutate } from "swr";
@@ -8,7 +8,7 @@ export default function SignIn() {
 	const [password, setPassword] = useState("");
 	const [signedIn, setSignedIn] = useState(false);
 
-	const { data, error } = useSWR(signedIn ? '/api/userData' : null);
+	const { data, error } = useSWR(signedIn ? "/api/userData" : null);
 
 	if (signedIn) {
 		redirect("/dashboard");
@@ -25,9 +25,9 @@ export default function SignIn() {
 			.then((data) => {
 				console.log(data);
 				setSignedIn(true);
-				console.log(data._doc)
+				console.log(data._doc);
 				localStorage.setItem("userData", JSON.stringify(data._doc));
-				mutate('/api/userData', data, false);
+				mutate("/api/userData", data, false);
 				redirect("/dashboard");
 			})
 			.catch((error) => {
