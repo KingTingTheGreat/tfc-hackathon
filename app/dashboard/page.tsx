@@ -33,8 +33,8 @@ export default function Dashboard() {
 	useEffect(() => {
 		// Retrieve user data from localStorage
 		const storedUserData = localStorage.getItem("userData");
-		if (storedUserData) {
-			setUserData(JSON.parse(storedUserData));
+		if (storedUserData !== "{}" && storedUserData !== null) {
+			setUserData(JSON.parse(storedUserData.toString()));
 		} else {
 			// Redirect the user back to the home page
 			redirect("/");
