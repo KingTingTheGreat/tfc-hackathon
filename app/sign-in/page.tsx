@@ -1,18 +1,13 @@
 "use client";
-import { useState } from "react";
-import { redirect } from "next/navigation";
-import useSWR, { mutate } from "swr";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SignIn() {
+	const router = useRouter();
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [signedIn, setSignedIn] = useState(false);
-
-	const { data, error } = useSWR(signedIn ? "/api/userData" : null);
-
-	if (signedIn) {
-		redirect("/dashboard");
-	}
 
 	function signIn() {
 		console.log("submitting signin info");
@@ -21,19 +16,28 @@ export default function SignIn() {
 			method: "POST",
 			body: JSON.stringify({ email, password }),
 		})
-			.then((res) => res.json())
+			.then((res) => {
+				if (res.status !== 200) {
+					console.error("Error signing in:", res.json());
+					return "BAD RESPONSE";
+				}
+				return res.json();
+			})
 			.then((data) => {
-				console.log(data);
+				if (data === "BAD RESPONSE") return;
 				setSignedIn(true);
-				console.log(data._doc);
-				localStorage.setItem("userData", JSON.stringify(data._doc));
-				mutate("/api/userData", data, false);
-				redirect("/dashboard");
+				localStorage.setItem("userData", JSON.stringify(data));
 			})
 			.catch((error) => {
 				console.error("Error signing in:", error);
 			});
 	}
+
+	useEffect(() => {
+		if (signedIn) {
+			router.push("/dashboard");
+		}
+	});
 
 	return (
 		<main className="flex min-h-11/12 items-center">

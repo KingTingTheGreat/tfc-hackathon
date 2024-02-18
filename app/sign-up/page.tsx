@@ -80,7 +80,7 @@ export default function SignUp() {
 	const [password, setPassword] = useState("");
 	const [retypePassword, setRetypePassword] = useState("");
 
-	const [redirectDashboard, setRedirectDashboard] = useState(false);
+	const [redirectSignin, setRedirectSignin] = useState(false);
 
 	const [errorMessage, setErrorMessage] = useState(<p></p>);
 
@@ -120,7 +120,7 @@ export default function SignUp() {
 			}),
 		}).then((res) => {
 			if (res.ok) {
-				setRedirectDashboard(true);
+				setRedirectSignin(true);
 			} else {
 				setSection(section - 1);
 				setErrorMessage(<p className="text-sm text-red-600">An error occurred. Please try again.</p>);
@@ -128,8 +128,8 @@ export default function SignUp() {
 		});
 	}
 
-	if (redirectDashboard) {
-		redirect("/dashboard");
+	if (redirectSignin) {
+		redirect("/sign-in");
 	}
 
 	return (

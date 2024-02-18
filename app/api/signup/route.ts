@@ -43,6 +43,7 @@ export async function POST(request: NextRequest) {
 	const userDB = new db.User(user);
 	await userDB.save();
 
-	const { password: _, ...userData } = user;
+	const userData = user;
+	userData.password = "";
 	return NextResponse.json(userData, { status: 200 });
 }

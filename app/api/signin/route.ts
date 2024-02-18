@@ -29,6 +29,7 @@ export async function POST(request: NextRequest) {
 		return NextResponse.json({ error: "Incorrect password" }, { status: 401 });
 	}
 	// return user data
-	const { password: _, ...userData } = user[0];
+	const userData = user[0];
+	userData.password = "";
 	return NextResponse.json(userData, { status: 200 });
 }
