@@ -14,39 +14,6 @@ export default function SignIn() {
 		redirect("/dashboard");
 	}
 
-	function signIn1() {
-		console.log("submitting signin info");
-
-		const { data, error } = useSWR('/api/signin',
-			(url) => {
-				console.log('fetching')
-				fetch(url, {
-					method: "POST",
-					body: JSON.stringify({ email, password })
-				}).then(res => res.json())
-			}
-		)
-
-		if (!error && data) {
-			console.log(data)
-			setSignedIn(true);
-			localStorage.setItem("userData", JSON.stringify(data))
-			redirect("/dashboard")
-		}
-
-		// fetch("/api/signin", {
-		// 	method: "POST",
-		// 	body: JSON.stringify({ email, password }),
-		// }).then((res) => {
-		// 	if (res.ok) {
-		// 		console.log(res.json())
-		// 		setSignedIn(true);
-		// 		localStorage.setItem("userData", JSON.stringify({ email, password }));
-		// 		// redirect("/dashboard");
-		// 	}
-		// });
-	}
-
 	function signIn() {
 		console.log("submitting signin info");
 
