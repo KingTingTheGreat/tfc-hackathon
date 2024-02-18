@@ -252,21 +252,24 @@ export default function SignUp() {
 					</div>
 
 					<div className="my-10 w-full flex flex-col items-center">
-						<div
-							className="text-blaj bg-offwhite flex justify-center w-20 py-2 px-4 my-5 rounded-full hover:shadow-xl transition-all cursor-pointer select-none"
-							onClick={() => {
-								setSection(section + 1);
-							}}>
-							Continue
+						<div className="md:flex md:flex-row-reverse md:items-center">
+							<div
+								className="text-blaj bg-offwhite flex justify-center w-20 py-2 px-4 my-5 rounded-full hover:shadow-xl transition-all cursor-pointer select-none"
+								onClick={() => {
+									setSection(section + 1);
+								}}>
+								Continue
+							</div>
+							<div
+								className="text-offwhite flex justify-center fixed left-0 bottom-0 md:static w-20 m-4 p-2 rounded-full cursor-pointer select-none"
+								onClick={() => {
+									setSection(section - 1);
+								}}>
+								← Back
+							</div>
 						</div>
+
 						{errorMessage}
-					</div>
-					<div
-						className="text-offwhite flex justify-center fixed left-0 bottom-0 w-20 m-4 p-2 rounded-full cursor-pointer select-none"
-						onClick={() => {
-							setSection(section - 1);
-						}}>
-						← Back
 					</div>
 				</div>
 			</div>
