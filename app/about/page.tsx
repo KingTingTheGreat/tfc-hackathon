@@ -44,7 +44,7 @@ const team: TeamMember[] = [
 
 const MemberCard = ({ member }: { member: TeamMember }) => {
 	return (
-		<div className="bg-blue-200 p-2 m-2 flex-1 rounded-lg min-w-72 max-w-72">
+		<div className="bg-blue-200 p-2 m-2 flex-1 rounded-lg min-w-[19rem] max-w-[19rem]">
 			<h3 className="text-2xl font-semibold">{member.name}</h3>
 			<p className="text-xl">
 				{member.year} | {member.school}
