@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 const ButtonLink = ({ path, text }: { path: string; text: string }) => {
@@ -9,6 +10,8 @@ const ButtonLink = ({ path, text }: { path: string; text: string }) => {
 };
 
 export default function Home() {
+	localStorage.setItem("userData", JSON.stringify({}));
+
 	return (
 		<main className="flex flex-col min-h-11/12 items-center">
 			<h1>Welcome to the TFC Hackathon</h1>

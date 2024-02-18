@@ -14,11 +14,11 @@ const Header = () => {
 			<Link href="/">
 				<h2 className="text-2xl font-bold">TFC HACKATHON</h2>
 			</Link>
-			<div>
+			<nav>
 				<NavLink path="/" name="Home" />
 				<NavLink path="/about" name="About" />
 				<NavLink path="/dashboard" name="Dashboard" />
-			</div>
+			</nav>
 		</header>
 	);
 };
