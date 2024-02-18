@@ -2,7 +2,9 @@ import Link from "next/link";
 
 const NavLink = ({ path, name }: { path: string; name: string }) => {
 	return (
-		<Link className="p-2.5 m-2 rounded-lg hover:bg-blue-300 transition" href={path}>
+		<Link
+			className="text-blaj p-4 border-solid border-2 border-offwhite hover:border-gray-300 hover:shadow-xl transition-all"
+			href={path}>
 			{name}
 		</Link>
 	);
