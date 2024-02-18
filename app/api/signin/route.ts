@@ -18,10 +18,10 @@ export async function POST(request: NextRequest) {
 	if (user.length === 0) {
 		return NextResponse.json({ error: "Incorrect email" }, { status: 401 });
 	}
-	// ensure nothing wrong on our end
-	if (user.length > 1) {
-		return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 });
-	}
+	// // ensure nothing wrong on our end
+	// if (user.length > 1) {
+	// 	return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 });
+	// }
 
 	// check if the password is correct
 	const match = await bcrypt.compare(password, user[0].password);
