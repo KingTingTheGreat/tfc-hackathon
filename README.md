@@ -1,4 +1,4 @@
-# [Healthcare Pro](https://tfc-hackathon-kingtingthegreat.vercel.app/)
+# [ExplorX](https://tfc-hackathon-kingtingthegreat.vercel.app/)
 ## Mission
 Our mission is to provide a convenient and accessible website for users to find the most cost effective options for prescriptions and procedures.
 ## Implementation
