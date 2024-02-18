@@ -12,7 +12,7 @@ const Header = () => {
 	return (
 		<header className="hidden md:flex justify-between items-center w-full min-h-1/12 p-4 bg-offwhite">
 			<Link href="/">
-				<h2 className="text-2xl font-bold">TFC HACKATHON</h2>
+				<h2 className="text-4xl text-blaj font-bold">ExploRx</h2>
 			</Link>
 			<nav>
 				<NavLink path="/" name="Home" />

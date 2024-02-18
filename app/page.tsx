@@ -14,7 +14,7 @@ export default function Home() {
 
 	return (
 		<main className="flex flex-col min-h-11/12 items-center">
-			<h1>Welcome to the TFC Hackathon</h1>
+			<h1 className="text-offwhite text-4xl font-bold p-6 m-4">Welcome to ExploRx</h1>
 			<div className="flex flex-col justify-around">
 				<ButtonLink path="sign-up" text="Sign Up" />
 				<ButtonLink path="sign-in" text="Sign In" />
