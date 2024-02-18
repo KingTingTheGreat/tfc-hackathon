@@ -3,38 +3,54 @@ import { TeamMember } from "@/types";
 const team: TeamMember[] = [
 	{
 		name: "Jeffrey Ting",
-		role: "President",
 		description:
-			"Jeffrey is a senior studying Computer Science and Business. He enjoys playing basketball and video games.",
-		majors: ["Computer Science", "Business"],
-		year: "Senior",
-		image: "jeffrey.jpg",
+			"I am a junior studying Computer Science and Philosophy. I am passionate about creating software to improve people's lives.",
+		majors: ["Computer Science", "Philosophy"],
+		year: "Junior",
+		school: "Boston University",
 	},
 	{
 		name: "Jeff Allo",
-		role: "Vice President",
 		description:
 			"Jeff is a senior studying Computer Science and Business. He enjoys playing basketball and video games.",
 		majors: ["Computer Science", "Business"],
 		year: "Senior",
-		image: "jeff.jpg",
+		school: "Howard University",
 	},
 	{
 		name: "Rida Naeem",
-		role: "Secretary",
 		description:
 			"Rida is a senior studying Computer Science and Business. She enjoys playing basketball and video games.",
-		majors: ["Computer Science", "Business"],
+		majors: ["Neuroscience", "Computer Science"],
 		year: "Senior",
-		image: "rida.jpg",
+		school: "Boston University",
+	},
+	{
+		name: "Nathaniel Crosse",
+		description:
+			"Rida is a senior studying Computer Science and Business. She enjoys playing basketball and video games.",
+		majors: ["Neuroscience", "Computer Science"],
+		year: "Senior",
+		school: "Howard University",
+	},
+	{
+		name: "Chinaza Okereke",
+		description:
+			"Chinaza is a senior studying Computer Science and Business. She enjoys playing basketball and video games.",
+		majors: ["Neuroscience", "Computer Science"],
+		year: "Senior",
+		school: "Howard University",
 	},
 ];
 
 const MemberCard = ({ member }: { member: TeamMember }) => {
 	return (
-		<div className="bg-blue-200 p-2 m-2 flex-1 rounded-lg max-w-40">
-			<h3>Name: {member.name}</h3>
-			<p>{member.role}</p>
+		<div className="bg-blue-200 p-2 m-2 flex-1 rounded-lg min-w-72 max-w-72">
+			<h3 className="text-2xl font-semibold">{member.name}</h3>
+			<p className="text-xl">
+				{member.year} | {member.school}
+			</p>
+			<p className="text-lg">{member.majors.join(", ")}</p>
 			<p>{member.description}</p>
 		</div>
 	);
@@ -42,10 +58,19 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
 
 export default function About() {
 	return (
-		<main className="flex min-h-screen items-center  p-24">
-			{team.map((member) => (
-				<MemberCard key={member.name} member={member} />
-			))}
+		<main className="flex min-h-screen w-[80%]">
+			<div className="flex flex-col items-center">
+				<p className="text-2xl text-center text-offwhite p-4 md:p-20">
+					We are a group of engineers and developers who are passionate about making healthcare data more
+					accessible and transparent, ensuring useres always get the best prices for the medications,
+					procedures, and treatments.
+				</p>
+				<div className="flex flex-wrap justify-center w-[80%]">
+					{team.map((member) => (
+						<MemberCard key={member.name} member={member} />
+					))}
+				</div>
+			</div>
 		</main>
 	);
 }
