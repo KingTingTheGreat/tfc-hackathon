@@ -23,11 +23,11 @@ export default function Prescription() {
 	}
 
 	return (
-		<main className="w-full min-h-11/12 items-center justify-center">
-			<div className="bg-blue items-center justify-center">
-				<h2>Prescriptions</h2>
+		<main className="w-full min-h-11/12 flex flex-col text-offwhite items-center justify-center">
+			<div className="text-center">
+				<h2 className="text-5xl p-2 m-1">Prescriptions</h2>
 			</div>
-			<div className="bg-white items-center justify-center">
+			<div className="flex flex-col items-center justify-center">
 				<div>
 					<p>New search</p>
 					<input
@@ -43,7 +43,7 @@ export default function Prescription() {
 					style={{
 						width: "300px",
 						height: "100px",
-						background: "blue",
+						background: "linear-gradient(to right, blue, lightblue)",
 						borderRadius: "10px",
 						display: "flex",
 						justifyContent: "center",

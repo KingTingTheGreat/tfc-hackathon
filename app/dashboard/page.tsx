@@ -49,8 +49,8 @@ export default function Dashboard() {
 		<main className="w-full min-h-11/12 flex flex-col text-offwhite items-center justify-center">
 			<div className="bg-blue items-center justify-center">
 				{/* <Link href="/">← Sign Out</Link> */}
-				<h3 className="text-5xl">Welcome back, {userData.firstName}</h3>
-				<p className="text-2xl">
+				<h3 className="text-3xl md:text-5xl">Welcome back, {userData.firstName}</h3>
+				<p className="text-xl md:text-2xl">
 					Your location is {userData.city}, {userData.state}
 				</p>
 			</div>
