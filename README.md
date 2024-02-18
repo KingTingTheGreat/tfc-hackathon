@@ -1,10 +1,5 @@
-# Healthcare Pro
-## Purpose
-Is to provide a convenient website for users to find more cost efficient options for perscriptions and use of insurance when applying for medical care.
+# [Healthcare Pro](https://tfc-hackathon-kingtingthegreat.vercel.app/)
+## Mission
+Our mission is to provide a convenient and accessible website for users to find the most cost effective options for prescriptions and procedures.
 ## Implementation
-To provide better oppourtunuties to the under privileged in saving them money on medical products and services.
-## Goal
-To optimize a persons insurance and budget to provide more affordable oppourtunities, amd transparency for their medical needs.
-
-
-
+Users input their location, insurance information, and past medical purchases. We use this data to give other users the most accurate possible estimate for similar medications or procedures. We also inform users of options they have without insurance, expanding our projects accessibility and ensuring our users always save as much money as possible.
