@@ -45,22 +45,22 @@ export default function SignIn() {
 
 	return (
 		<main className="flex flex-col text-offwhite min-h-11/12 items-center">
-			<p className="text-xl">Sign In</p>
+			<p className="text-2xl">Sign In</p>
 
 			<div className="flex flex-col items-center">
-				<h4>Email</h4>
+				<h4 className="text-lg">Email</h4>
 				<input
 					type="text"
-					className="m-1 text-black"
+					className="m-1 text-black p-1"
 					value={email}
 					placeholder="Email"
 					required={true}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-				<h4>Password</h4>
+				<h4 className="text-lg">Password</h4>
 				<input
 					type="password"
-					className="m-1 text-black"
+					className="m-1 text-black p-1"
 					value={password}
 					placeholder="Password"
 					required={true}
@@ -68,7 +68,11 @@ export default function SignIn() {
 				/>
 			</div>
 
-			<button onClick={signIn}>Sign In</button>
+			<button
+				className="text-blaj bg-offwhite flex justify-center w-20 py-2 px-4 my-5 rounded-full hover:shadow-xl transition-all cursor-pointer select-none"
+				onClick={signIn}>
+				Sign In
+			</button>
 		</main>
 	);
 }
