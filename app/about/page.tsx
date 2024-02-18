@@ -11,8 +11,7 @@ const team: TeamMember[] = [
 	},
 	{
 		name: "Jeff Allo",
-		description:
-			"Jeff is a sophomore Electrical Engineering major. He loves playing video games and taking walks",
+		description: "Jeff is a sophomore Electrical Engineering major. He loves playing video games and taking walks",
 		majors: ["Electrical Engineering"],
 		year: "Sophomore",
 		school: "Howard University",
@@ -20,7 +19,7 @@ const team: TeamMember[] = [
 	{
 		name: "Rida Naeem",
 		description:
-			"Rida is a senior studying Computer Science and Business. She enjoys playing basketball and video games.",
+			"I am a senior studying Neuroscience and Computer Science. I am really interested in the intersection of technology and healthcare, and enjoy creating software to address the disparities in healthcare.",
 		majors: ["Neuroscience", "Computer Science"],
 		year: "Senior",
 		school: "Boston University",
