@@ -23,7 +23,8 @@ export async function POST(request: NextRequest) {
 		!user.groupNumber ||
 		!user.rxBin
 	) {
-		return NextResponse.json({ status: 500 });
+		console.log("Invalid input data");
+		return NextResponse.json({ error: "Invalid input data" }, { status: 500 });
 	}
 
 	const db = await userDBConnect();
