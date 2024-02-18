@@ -1,13 +1,38 @@
-"use client";
+'use client';
 import { useState } from "react";
+import { redirect } from "next/navigation";
+import useSWR, { mutate } from "swr";
 
 export default function SignIn() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [signedIn, setSignedIn] = useState(false);
 
+	const { data, error } = useSWR(signedIn ? '/api/userData' : null);
+
 	if (signedIn) {
-		return <p>Success</p>;
+		redirect("/dashboard");
+	}
+
+	function signIn() {
+		console.log("submitting signin info");
+
+		fetch("/api/signin", {
+			method: "POST",
+			body: JSON.stringify({ email, password }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setSignedIn(true);
+				console.log(data._doc)
+				localStorage.setItem("userData", JSON.stringify(data._doc));
+				mutate('/api/userData', data, false);
+				redirect("/dashboard");
+			})
+			.catch((error) => {
+				console.error("Error signing in:", error);
+			});
 	}
 
 	return (
@@ -37,20 +62,7 @@ export default function SignIn() {
 				/>
 			</div>
 
-			<button
-				onClick={() => {
-					console.log("submitting signin info");
-					fetch("/api/signin", {
-						method: "POST",
-						body: JSON.stringify({ email, password }),
-					}).then((res) => {
-						if (res.ok) {
-							setSignedIn(true);
-						}
-					});
-				}}>
-				Sign In
-			</button>
+			<button onClick={signIn}>Sign In</button>
 		</main>
 	);
 }
