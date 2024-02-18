@@ -10,7 +10,7 @@ const ButtonLink = ({ path, text }: { path: string; text: string }) => {
 };
 
 export default function Home() {
-	localStorage.setItem("userData", JSON.stringify({}));
+	// localStorage.setItem("userData", JSON.stringify({}));
 
 	return (
 		<main className="flex flex-col min-h-11/12 items-center">
