@@ -12,9 +12,9 @@ const team: TeamMember[] = [
 	{
 		name: "Jeff Allo",
 		description:
-			"Jeff is a senior studying Computer Science and Business. He enjoys playing basketball and video games.",
-		majors: ["Computer Science", "Business"],
-		year: "Senior",
+			"Jeff is a sophomore Electrical Engineering major. He loves playing video games and taking walks",
+		majors: ["Electrical Engineering"],
+		year: "Sophomore",
 		school: "Howard University",
 	},
 	{
@@ -28,17 +28,17 @@ const team: TeamMember[] = [
 	{
 		name: "Nathaniel Crosse",
 		description:
-			"Rida is a senior studying Computer Science and Business. She enjoys playing basketball and video games.",
-		majors: ["Neuroscience", "Computer Science"],
-		year: "Senior",
+			"Nathaniel is a freshman studying Electrical Engineering. He enjoys running and playing the cello. ",
+		majors: ["Electrical Engineering"],
+		year: "Freshman",
 		school: "Howard University",
 	},
 	{
 		name: "Chinaza Okereke",
 		description:
-			"Chinaza is a senior studying Computer Science and Business. She enjoys playing basketball and video games.",
-		majors: ["Neuroscience", "Computer Science"],
-		year: "Senior",
+			"Chinaza is a sophomore studying Computer Engineering. He enjoys playing basketball and video games.",
+		majors: ["Computer Engineering"],
+		year: "Sophomore",
 		school: "Howard University",
 	},
 ];
