@@ -44,25 +44,23 @@ export default function SignIn() {
 	});
 
 	return (
-		<main className="flex min-h-11/12 items-center">
-			<p>Sign In</p>
+		<main className="flex flex-col text-offwhite min-h-11/12 items-center">
+			<p className="text-xl">Sign In</p>
 
-			<div className="flex items-center">
+			<div className="flex flex-col items-center">
 				<h4>Email</h4>
 				<input
 					type="text"
-					className="m-2 text-black"
+					className="m-1 text-black"
 					value={email}
 					placeholder="Email"
 					required={true}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-			</div>
-			<div className="flex items-center">
 				<h4>Password</h4>
 				<input
 					type="password"
-					className="m-2 text-black"
+					className="m-1 text-black"
 					value={password}
 					placeholder="Password"
 					required={true}
