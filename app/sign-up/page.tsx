@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const months = [
 	"January",
@@ -51,6 +52,8 @@ const InputField = ({
 };
 
 export default function SignUp() {
+	const router = useRouter();
+
 	const [section, setSection] = useState(0);
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
@@ -118,19 +121,31 @@ export default function SignUp() {
 				password,
 				dob: `${selectedMonth} ${selectedDay}, ${selectedYear}`,
 			}),
-		}).then((res) => {
-			if (res.ok) {
+		})
+			.then((res) => {
+				if (res.status === 200) {
+					setRedirectSignin(true);
+				} else {
+					setRedirectSignin(false);
+					setSection(section - 1);
+					setErrorMessage(<p className="text-sm text-red-600">An error occurred. Please try again.</p>);
+				}
+			})
+			.catch((error) => {
 				setRedirectSignin(true);
-			} else {
+				console.error("Error signing up:", error);
 				setSection(section - 1);
 				setErrorMessage(<p className="text-sm text-red-600">An error occurred. Please try again.</p>);
-			}
-		});
+			});
 	}
 
-	if (redirectSignin) {
-		redirect("/sign-in");
-	}
+	useEffect(() => {
+		if (redirectSignin) {
+			router.push("/sign-in");
+		} else {
+			localStorage.setItem("userData", JSON.stringify({}));
+		}
+	});
 
 	return (
 		<main className="flex min-h-11/12 items-center justify-center">

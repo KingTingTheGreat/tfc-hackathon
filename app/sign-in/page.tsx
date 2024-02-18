@@ -18,15 +18,17 @@ export default function SignIn() {
 		})
 			.then((res) => {
 				if (res.status !== 200) {
-					console.error("Error signing in:", res.json());
+					console.error("Error signing in:", res.status);
+					console.log(res.json());
 					return "BAD RESPONSE";
 				}
 				return res.json();
 			})
 			.then((data) => {
-				if (data === "BAD RESPONSE") return;
-				setSignedIn(true);
-				localStorage.setItem("userData", JSON.stringify(data));
+				if (data !== "BAD RESPONSE") {
+					setSignedIn(true);
+					localStorage.setItem("userData", JSON.stringify(data));
+				}
 			})
 			.catch((error) => {
 				console.error("Error signing in:", error);
@@ -36,6 +38,8 @@ export default function SignIn() {
 	useEffect(() => {
 		if (signedIn) {
 			router.push("/dashboard");
+		} else {
+			localStorage.setItem("userData", JSON.stringify({}));
 		}
 	});
 
