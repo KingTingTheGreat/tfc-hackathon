@@ -34,7 +34,7 @@ const InputField = ({
 	required: boolean;
 }) => {
 	return (
-		<div className="flex flex-col md:flex-row items-center text-offwhite">
+		<div className="flex flex-col min-h-11/12 md:flex-row items-center text-offwhite">
 			<div className="flex flex-col md:flex-row items-start md:items-center">
 				<h4>{label}</h4>
 				<input
